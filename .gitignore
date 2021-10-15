@@ -1,0 +1,7 @@
+
+.gitattributes
+.idea/*
+client/node_modules/*
+*.xml
+*.xml
+*.xml
