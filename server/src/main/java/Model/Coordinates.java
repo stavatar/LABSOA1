@@ -12,7 +12,7 @@ public  class Coordinates
     public Coordinates(){
 
     }
-    public Coordinates(Integer x, int y) {
+    public Coordinates(Double  x, Double  y) {
         this.x = x;
         this.y = y;
     }
@@ -21,9 +21,9 @@ public  class Coordinates
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name="x")
-    private Integer x; //Поле не может быть null
+    private Double  x; //Поле не может быть null
     @Column(name="y")
-    private int y; //Максимальное значение поля: 369
+    private Double  y; //Максимальное значение поля: 369
 
     public long getId() {
         return id;
@@ -33,19 +33,19 @@ public  class Coordinates
         this.id = id;
     }
 
-    public Integer getX() {
+    public Double  getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(Double  x) {
         this.x = x;
     }
 
-    public int getY() {
+    public Double  getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(Double  y) {
         this.y = y;
     }
 }

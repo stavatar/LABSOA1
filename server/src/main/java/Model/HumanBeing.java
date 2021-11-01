@@ -2,11 +2,10 @@ package Model;
 
 import Model.util.Mood;
 import Model.util.WeaponType;
-import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Table;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 
 @javax.persistence.Entity(name = "HumanBeing")
@@ -18,24 +17,24 @@ public class HumanBeing
     private long id;
     @Column(name = "name")
     private String name;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,optional = true)
     @JoinColumn (name="coordinates_id")
     private Coordinates coordinates;
-    @Column(name = "creationDate")
-    private java.time.LocalDate creationDate;
-    @Column(name = "realHero")
+    @Column(name = "creationdate")
+    private java.time.ZonedDateTime  creationDate;
+    @Column(name = "realhero")
     private boolean realHero;
     @Column(name = "hasToothpick")
     private boolean hasToothpick;
     @Column(name = "impactSpeed")
-    private Float impactSpeed;
+    private double impactSpeed;
     @Column(name = "weaponType")
     @Enumerated(EnumType.STRING)
     private WeaponType weaponType;
     @Column(name = "mood")
     @Enumerated(EnumType.STRING)
     private Mood mood;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,optional = true)
     @JoinColumn (name="car_id")
     private Car car;
 
@@ -63,11 +62,11 @@ public class HumanBeing
         this.coordinates = coordinates;
     }
 
-    public LocalDate getCreationDate() {
+    public ZonedDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(ZonedDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -87,11 +86,11 @@ public class HumanBeing
         this.hasToothpick = hasToothpick;
     }
 
-    public Float getImpactSpeed() {
+    public double getImpactSpeed() {
         return impactSpeed;
     }
 
-    public void setImpactSpeed(Float impactSpeed) {
+    public void setImpactSpeed(Double impactSpeed) {
         this.impactSpeed = impactSpeed;
     }
 

@@ -15,6 +15,9 @@ class Car
         this.cool = cool;
     }
 
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

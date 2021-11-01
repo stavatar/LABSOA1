@@ -1,0 +1,17 @@
+.btn{
+    left: 1px;
+    margin-right: 100%;
+
+}
+
+.btn-padding-left-top{
+    padding-left: 10%;
+    width: 100%;
+
+}
+
+.table{
+    table-layout: fixed;
+
+
+}
